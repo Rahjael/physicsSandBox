@@ -44,7 +44,7 @@ class Mouse {
   }
 
   draw() {
-    if(this.isDragging) this.drawForceArrow();
+    if(this.isDragging && this.selectedEntity !== undefined) this.drawForceArrow();
   }
 
   drawForceArrow() {
@@ -61,6 +61,5 @@ class Mouse {
   pushSelected() {
     let pushVector = this.selectedEntity.pos.subtract(this.pos).multiply(0.5);
     this.selectedEntity.vel = this.selectedEntity.vel.add(pushVector);
-    console.log(this.selectedEntity.vel);
   }
 }

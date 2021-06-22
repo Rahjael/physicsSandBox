@@ -87,7 +87,8 @@ class Entity {
   }
 
   drawVectors() {
-    // TODO
+    this.vel.getComponents().forEach( comp => comp.draw(this.pos.x, this.pos.y, 5, 'green'));
+    this.vel.draw(this.pos.x, this.pos.y, 5, 'green');
   }
 
   containsPoint = (x, y) => {
